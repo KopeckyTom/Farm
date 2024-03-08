@@ -80,9 +80,7 @@ public abstract class Flower {
     public String toString() {
         return "Flower{" +
                 "name='" + name + '\'' +
-                ", price=" + price +
-                ", neededArea=" + neededArea +
-                ", chanceOfGrowth=" + chanceOfGrowth +
+                ", amount = " + amount +
                 '}';
     }
 
