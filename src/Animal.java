@@ -5,6 +5,20 @@ public abstract class Animal {
     protected Size size;
     protected String specialCare;
 
+    public Animal(String type, String name, Size size, String specialCare) {
+        this.type = type;
+        this.name = name;
+        this.size = size;
+        this.specialCare = specialCare;
+    }
+
+    public Size getSize() {
+        return size;
+    }
+
+    public void setSize(Size size) {
+        this.size = size;
+    }
     @Override
     public String toString() {
         return "Animal{" +

@@ -1,46 +1,45 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Kytka extends Flower {
 
+    private Random r = new Random();
 
 
-
-    private List growingFlowers = new ArrayList();
-
-
-
-
-
-    @Override
-    public void watering() {
-
-            //chanceOfGrowth += 20;
-
-        System.out.println("zalito");
-
+    public Kytka(String name, double price, double neededArea, double chanceOfGrowth) {
+        super(name, price, neededArea, chanceOfGrowth);
     }
 
+
+
+
+
+
     @Override
-    public void plant(Flower flower) {
-        try{
-            if (growingFlowers.size() < 5){
-                growingFlowers.add(flower);
-            }
-        }catch (Exception e){
-            new Exception("Can't plant - full area");
+    public void grow() {
+
+        int chance = r.nextInt(100)+1;
+
+        if (chanceOfGrowth < chance) {
+            kaput++;
         }
+
+        amount -= kaput;
+        deadArea = kaput * 5;
+        neededArea -= deadArea;
+
+
+        growString();
     }
 
-    @Override
-    public void harvest(Flower flower) {
-        try{
-            if (growingFlowers.size() > 1){
+    public String growString(){
 
-                growingFlowers.remove(growingFlowers.indexOf(flower));
-            }
-        }catch (Exception e){
-            new Exception("Can't harvest - no flowers");
-        }
+        return "Celkem odeslo ze sveta " + kaput + " kvetinek"+'\n'+
+                "Novy pocet rostlinek je "+amount+ '\n'+
+                "Nova zabrana plocha je " + neededArea;
+
+
     }
+
 }

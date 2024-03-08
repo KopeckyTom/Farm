@@ -4,18 +4,22 @@ import java.util.List;
 public abstract class Flower {
 
 
-
     protected String name;
     protected double price;
     protected double neededArea;
     protected double chanceOfGrowth;
+    protected double amount = 0;
+    protected double deadArea;
+    protected int kaput = 0;
 
+    public Flower(String name, double price, double neededArea, double chanceOfGrowth) {
+        this.name = name;
+        this.price = price;
+        this.neededArea = neededArea;
+        this.chanceOfGrowth = chanceOfGrowth;
+    }
 
-    public abstract void watering();
-
-    public abstract void plant(Flower flower);
-
-    public abstract void harvest(Flower flower);
+    public abstract void grow();
 
 
     public String getName() {
@@ -30,8 +34,30 @@ public abstract class Flower {
         return price;
     }
 
+    public double getDeadArea() {
+        return deadArea;
+    }
+
+
+
+    public void setKaput(int kaput) {
+        this.kaput = kaput;
+    }
+
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public int getKaput() {
+        return kaput;
     }
 
     public double getNeededArea() {
