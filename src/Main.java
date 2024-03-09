@@ -1,25 +1,29 @@
 public class Main {
     public static void main(String[] args) {
 
-        Flower corn = new Kytka("Pepa", 150, 250,50);
-        Flower weat = new Kytka("Fred", 120, 400,40);
-        Flower ruze = new Kytka("Majkl", 300, 150,65);
+        Flower corn = new Kytka("Pepa", 150, 50000,50);
+        Flower weat = new Kytka("Fred", 120, 200000,40);
+        Flower ruze = new Kytka("Majkl", 300, 10000,65);
         Farm farm = new Farm();
 
         System.out.println();
-        farm.plant(corn,50);
-        farm.plant(ruze, 100);
-        farm.plant(weat, 200);
+        farm.plant(corn,10000);
+        farm.plant(ruze, 2000);
+        farm.plant(weat, 40000);
         System.out.println();
         farm.watering(corn);
-        farm.watering(corn);
-        farm.watering(corn);
+        farm.watering(ruze);
+        farm.watering(weat);
         System.out.println();
+        corn.grow();
+        ruze.grow();
+        weat.grow();
+
         farm.harvest(corn);
         farm.harvest(weat);
         farm.harvest(ruze);
         System.out.println();
-        System.out.println("Kytky vyndany: " + farm.getFlowersHarvested());
+        System.out.println("Kytky vysazeny: " + farm.getFlowersHarvested());
 
 
     }

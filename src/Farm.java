@@ -13,7 +13,7 @@ public class Farm {
     public void watering(Flower flower) {
 
         flower.chanceOfGrowth += 20;
-        System.out.println(flower.getName() + " byl zalit");
+        System.out.println(flower.getName() + " byl zalit: " + flower.getChanceOfGrowth());
 
     }
     public void plant(Flower flower,int amount) {

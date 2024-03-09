@@ -12,17 +12,17 @@ public class Kytka extends Flower {
     }
 
 
-
-
-
-
     @Override
     public void grow() {
 
-        int chance = r.nextInt(100)+1;
 
-        if (chanceOfGrowth < chance) {
-            kaput++;
+        for (int i = 0; i <amount;i++){
+            int chance = r.nextInt(100)+1;
+
+            if (chanceOfGrowth < chance) {
+                kaput++;
+            }
+
         }
 
         amount -= kaput;
@@ -30,14 +30,14 @@ public class Kytka extends Flower {
         neededArea -= deadArea;
 
 
-        growString();
+        System.out.println(growString());
     }
 
     public String growString(){
 
         return "Celkem odeslo ze sveta " + kaput + " kvetinek"+'\n'+
                 "Novy pocet rostlinek je "+amount+ '\n'+
-                "Nova zabrana plocha je " + neededArea;
+                "Nova zabrana plocha je " + neededArea+ '\n';
 
 
     }
